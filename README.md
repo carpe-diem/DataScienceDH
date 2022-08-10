@@ -33,3 +33,8 @@ conda list
 <code>
 conda deactivate
 </code>
+
+### Abrir Jupiter-lab: 
+<code>
+jupyter-lab   
+</code>
