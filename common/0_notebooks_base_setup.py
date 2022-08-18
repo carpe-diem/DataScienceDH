@@ -48,7 +48,7 @@ def update_path():
     if notebook_base_path not in sys.path:
         sys.path.append(notebook_base_path)
         
-    substring = 'dsad_2021'
+    substring = ''
     index = notebook_base_path.index(substring)
     if index > -1:
         last_pos = index + len(substring) + 1
@@ -102,7 +102,7 @@ def main(arguments):
     
     if 'plotly' in arguments:
         print('check plotly dependencies')
-        plotly_requirements_file_path = '../../../common/requirements_plotly.txt'
+        plotly_requirements_file_path = '../common/requirements_plotly.txt'
         try:
             install_packages(plotly_requirements_file_path, channel='plotly')
         except subprocess.CalledProcessError as err:
@@ -110,7 +110,7 @@ def main(arguments):
     
     if 'conda-forge' in arguments:
         print('check conda-forge dependencies')
-        plotly_requirements_file_path = '../../../common/requirements_conda-forge.txt'
+        plotly_requirements_file_path = '../common/requirements_conda-forge.txt'
         try:
             install_packages(plotly_requirements_file_path, channel='conda-forge')
         except subprocess.CalledProcessError as err:
@@ -118,7 +118,7 @@ def main(arguments):
         
     
     print('default checking')        
-    requirements_file_path = '../../../common/requirements.txt'
+    requirements_file_path = '../common/requirements.txt'
     try:
         install_packages(requirements_file_path)
     except subprocess.CalledProcessError as err:
